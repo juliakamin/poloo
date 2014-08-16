@@ -1,0 +1,57 @@
+<%= form_for(@quiz) do |f| %>
+  <% if @quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
+
+      <ul>
+      <% @quiz.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :q0, "There are some human actions which just go against rules of nature." %><br />
+    <%= f.select :q0, options_for_select([["Strongly Agree",4], ["Somewhat Agree",3],["Neither Agree nor Disagree",2],["Somewhat Disagree",1],["Strongly Disagree",0]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q1, "The most important goal of government is to care for those who are least well off." %><br />
+    <%= f.select :q1, options_for_select([["Strongly Agree",0], ["Somewhat Agree",1],["Neither Agree nor Disagree",2],["Somewhat Disagree",3],["Strongly Disagree",4]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q2, "Loyalty and respect for authority are vital for society to function well."%><br />
+    <%= f.select :q2, options_for_select([["Strongly Agree",4], ["Somewhat Agree",3],["Neither Agree nor Disagree",2],["Somewhat Disagree",1],["Strongly Disagree",0]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q3, "Anyone can get ahead by taking personal responsibility for their life. Hard work is what divides the successful from the least well off." %><br />
+    <%= f.select :q3, options_for_select([["Strongly Agree",4], ["Somewhat Agree",3],["Neither Agree nor Disagree",2],["Somewhat Disagree",1],["Strongly Disagree",0]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q4, "The government today has far too much access to our personal information." %><br />
+    <%= f.select :q4, options_for_select([["Strongly Agree",0], ["Somewhat Agree",1],["Neither Agree nor Disagree",2],["Somewhat Disagree",3],["Strongly Disagree",4]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q5, "More often than not, government is part of the problem; so the smaller government is the better." %><br />
+    <%= f.select :q5, options_for_select([["Strongly Agree",4], ["Somewhat Agree",3],["Neither Agree nor Disagree",2],["Somewhat Disagree",1],["Strongly Disagree",0]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q6, "Anyone should be allowed to sleep with and marry whom they please; it is no business of the government." %><br />
+    <%= f.select :q6, options_for_select([["Strongly Agree",0], ["Somewhat Agree",1],["Neither Agree nor Disagree",2],["Somewhat Disagree",3],["Strongly Disagree",4]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q7, "One of the responsibilities of government is to regulate industry in order to protect the environment." %><br />
+    <%= f.select :q7, options_for_select([["Strongly Agree",0], ["Somewhat Agree",1],["Neither Agree nor Disagree",2],["Somewhat Disagree",3],["Strongly Disagree",4]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q8, "The United States was founded on Christian values; it is important that those values continue to play a role in government." %><br />
+    <%= f.select :q8, options_for_select([["Strongly Agree",4], ["Somewhat Agree",3],["Neither Agree nor Disagree",2],["Somewhat Disagree",1],["Strongly Disagree",0]])%>
+  </div>
+  <div class="field">
+    <%= f.label :q9, "The government should play no role in setting wages." %><br />
+    <%= f.select :q9, options_for_select([["Strongly Agree",4], ["Somewhat Agree",3],["Neither Agree nor Disagree",2],["Somewhat Disagree",1],["Strongly Disagree",0]])%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

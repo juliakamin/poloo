@@ -1,0 +1,36 @@
+<h1>Your Poloo</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>Your social conservative score is: <%= @quiz.q0 + @quiz.q2 + @quiz.q4 + @quiz.q6 + @quiz.q8 %> out of 20.</p>
+<p>Your economic conservative score is: <%= @quiz.q1 + @quiz.q3 + @quiz.q5 + @quiz.q7 + @quiz.q9 %> out of 20.</p>
+
+<div class="label">
+	<p style="float: center;">Economically Liberal</p>
+</div>	
+
+<div class="label">
+	<p style="padding-top: 200px; float: left;">Socially Liberal</p>
+	<p style="padding-top: 200px; float: right;">Socially Conservative</p>
+</div>	
+
+<div class="chart">
+	<div id="xaxis">
+	</div>
+	<div id="yaxis">
+	</div>
+	<div style="position: relative; bottom: <%= 390 - 18 * (@quiz.q1 + @quiz.q3 + @quiz.q5 + @quiz.q7 + @quiz.q9) %>px; left: <%= 18 * (@quiz.q0 + @quiz.q2 + @quiz.q4 + @quiz.q6 + @quiz.q8) %>px">
+	  <p>You</p>
+	</div>	
+</div>
+
+
+<div class="label">
+	<p style="float: center;">Economically Conservative</p>
+</div>
+
+
+
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>
